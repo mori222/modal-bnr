@@ -1,0 +1,58 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 2.5641025641vw;
+}
+@media only screen and (min-width: 700px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+.popup_banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup_banner .popup_inner {
+  position: relative;
+}
+.popup_banner .popup_inner img {
+  width: 80vw;
+  height: auto;
+}
+@media only screen and (min-width: 700px) {
+  .popup_banner .popup_inner img {
+    width: 30vw;
+  }
+}
+.popup_banner .popup_inner .close_btn {
+  position: absolute;
+  background: #aaa;
+  color: #fff;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+@media only screen and (min-width: 700px) {
+  .popup_banner .popup_inner .close_btn {
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    right: -15px;
+  }
+}/*# sourceMappingURL=style.css.map */

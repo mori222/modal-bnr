@@ -1,0 +1,60 @@
+$media-pc: 700px;
+
+@mixin pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;
+  }
+}
+
+html{
+	scroll-behavior: smooth;
+	font-size:2.56410256410256vw;
+	@include pc{
+		font-size: 10px;
+	}
+}
+
+.popup_banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($color: #000000, $alpha: 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popup_inner {
+        position: relative;
+        img{
+            width: 80vw;
+            height: auto;
+            @include pc{
+                width: 30vw;
+            }
+        }
+        .close_btn{
+            position: absolute;
+            background: #aaa;
+            color: #fff;
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            top: -10px;
+            right: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            @include pc{
+                font-size: 28px;
+                width: 40px;
+                height: 40px;
+                top: -15px;
+                right: -15px;
+            }
+        }
+    }
+}
