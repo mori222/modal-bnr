@@ -8,7 +8,7 @@ const ExitIntentBanner = () => {
 
     useEffect(() => {
         const count =localStorage.getItem("visitCount");
-        const newCount = count ? parseInt(count) + 1 : 1;
+        const newCount = count ? (parseInt(count) % 4) + 1 : 1;
         localStorage.setItem("visitCount", newCount.toString());
         setVisitCount(newCount);
         setShowBanner(true);
@@ -22,8 +22,10 @@ const ExitIntentBanner = () => {
                 return "/images/popup_02.png";
             case 3:
                 return "/images/popup_03.png";
-            default:
+            case 4:
                 return "/images/popup_04.png";
+            default:
+                return "/images/popup_01.png";
         }
     };
 
@@ -31,7 +33,7 @@ const ExitIntentBanner = () => {
 
     return(
         <div className="popup_banner">
-            <div className="popup_inner">   
+            <div className="popup_inner">
                 <img src={getBannerImage()} alt="Popup Banner" />
                 <button onClick={() => setShowBanner(false)} className="close_btn">×</button>
             </div>
