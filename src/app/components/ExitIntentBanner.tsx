@@ -12,6 +12,12 @@ const ExitIntentBanner = () => {
         localStorage.setItem("visitCount", newCount.toString());
         setVisitCount(newCount);
         setShowBanner(true);
+
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        }
     }, []);
 
     const getBannerImage = () => {
@@ -35,7 +41,10 @@ const ExitIntentBanner = () => {
         <div className="popup_banner">
             <div className="popup_inner">
                 <img src={getBannerImage()} alt="Popup Banner" />
-                <button onClick={() => setShowBanner(false)} className="close_btn">×</button>
+                <button onClick={() => {
+                    setShowBanner(false);
+                    document.body.style.overflow = 'auto';
+                }} className="close_btn">×</button>
             </div>
         </div>
     );
